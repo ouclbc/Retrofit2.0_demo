@@ -19,7 +19,7 @@ public static class Contributor {
       this.contributions = contributions;
     }
   }
-2.1.	New一个client,由于demo返回的是json数据，所以我们可以用Gson去解析，retrofit本身是没有转换器的，但是square提供了一些常用数据的jar包
+2.New一个client,由于demo返回的是json数据，所以我们可以用Gson去解析，retrofit本身是没有转换器的，但是square提供了一些常用数据的jar包
         Gson: com.squareup.retrofit2:converter-gson
         Jackson: com.squareup.retrofit2:converter-jackson
         Moshi: com.squareup.retrofit2:converter-moshi
@@ -33,6 +33,7 @@ public static class Contributor {
         .baseUrl(API_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .build();
+        
 3.	创建接口请求实例
 // Create an instance of our GitHub API interface.
     GitHub github = retrofit.create(GitHub.class);
